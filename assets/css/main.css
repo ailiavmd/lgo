@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../fonts/NotoSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../fonts/NotoSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: bold;
+}
+
+* {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: .95rem;
+}
+
+.header-nav {
+    border-bottom: 1px solid gainsboro;
+    background: white;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+
+h1 {
+    display: inline-block;
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 30px;
+}
+
+.separador {
+    width: 1px;
+    background: gainsboro;
+    height: 15px;
+}
+
+.navigation li {
+    border: 1px solid gainsboro;
+    padding: 3px 15px;
+    margin: 0 2px;
+}
+
+.redes li {
+    padding-left: 10px;
+}
+
+#inicio {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form.search {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.resultado {
+    border: 1px solid gainsboro;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+form.contacto {
+    max-width: 500px;
+}
