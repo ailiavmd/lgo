@@ -11,6 +11,13 @@
     font-style: bold;
 }
 
+:root {
+    --light-yellow: #fedc7e;
+    --orange: #ffa232;
+    --dark-red: #ba6767;
+    --green: #c6ceb7;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -18,21 +25,21 @@ body {
 * {
     font-family: 'Noto Sans', sans-serif;
     font-size: .92rem;
-    color: #444;
+    color: #555;
+}
+
+a {
+    color: inherit;
+    transition: .3s;
 }
 
 a:hover {
-    color: #883433;
+    color: var(--light-yellow);
     text-decoration: none;
 }
 
-.header-nav {
-    box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.45);
-    background: white;
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 5;
+a:hover i {
+    color: var(--light-yellow);
 }
 
 h1 {
@@ -46,26 +53,41 @@ h2 {
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 700;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 40px;
+    border-top: 5px dashed var(--light-yellow);
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Navigation */
+.header-nav {
+    background: white;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    border-bottom: 5px solid var(--light-yellow);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
 }
 
 .logo img {
     height: 30px;
 }
 
-.separador {
-    width: 1px;
-    background: gainsboro;
-    height: 15px;
-}
-
 .navigation li {
     padding: 3px 15px;
     margin: 0 2px;
     transition: .3s;
-}
-
-.navigation li:hover {
-    background: #fdb900;
+    font-weight: 700;
 }
 
 .redes li {
@@ -76,10 +98,7 @@ h2 {
     font-size: 1.2rem;
 }
 
-#inicio {
-    
-}
-
+/* Site Header */
 .header-banner {
     background-image: url('../img/lgo.jpg');
     background-size: cover;
@@ -94,83 +113,70 @@ h2 {
     margin-left: 20px;
 }
 
+.cta h2 {
+    font-size: 2rem;
+}
+
+.cta h2::after {
+    left: 0;
+    transform: none;
+}
+
 .cta h3 {
     font-size: 1rem;
 }
 
-#resultados {
-    padding: 50px 0;
-    top: -50px;
-    position: relative;
+.cta .button {
+    background: var(--orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 3px 3px 0px 0px var(--dark-red);
+    padding: 8px 25px;
+    color: white;
+    margin-top: 20px;
 }
 
-#resultados::after {
-    content: '';
-    width: 100%;
-    height: 50px;
-    background: #fdb900;
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    transform: rotate(-2deg);
-    z-index: -1;
+/* Resultados */
+#resultados {
+    padding: 0 0 50px 0;
+    border-bottom: 5px solid var(--light-yellow);
 }
 
 .title {
-    background: #fdb900;
-	padding-bottom: 5px;
-    margin-bottom: 50px;
-    position: relative;
-    z-index: 3;
-}
-
-.title::after {
-    content: '';
-    width: 110%;
-    height: 60px;
-    background: #fdb900;
-    position: absolute;
-    top: -35px;
-	left: 0;
-	transform: rotate(-2deg);
-	z-index: -1;
-}
-
-footer {
-    padding: 50px 20px;
-    padding-bottom: 0;
-    text-align: center;
-    background: lightgoldenrod#fdb900;
+    background: var(--green);
+	padding: 50px 20px;
+    margin-bottom: 70px;
+    border-top: 5px solid var(--light-yellow);
+    border-bottom: 5px solid var(--light-yellow);
 }
 
 form.search {
     width: 100%;
     max-width: 500px;
-    padding: 0 20px;
     margin: 0 auto;
-    margin-bottom: 50px;
 }
 
 form.search .input-group {
-    box-shadow: 3px 3px 0px 0px #883433;
+    box-shadow: 3px 3px 0px 0px var(--dark-red);
 }
 
 form.search input, form.search .input-group-addon {
     padding: 5px 15px;
-    border: 1px solid #883433;
+    border: 2px solid var(--light-yellow);
     border-radius: 0;
 }
 
 .input-group-addon {
-    background: #f38500;
+    background: var(--light-yellow);
     border-left: none;
 }
 
 form.search button {
-    background: #f38500;
-    border: 1px solid #883433;
+    background: var(--light-yellow);
+    border: 2px solid var(--light-yellow);
     padding: 5px 20px;
-    box-shadow: 3px 3px 0px 0px #883433;
+    box-shadow: 3px 3px 0px 0px var(--dark-red);
     color: white;
 }
 
@@ -189,10 +195,10 @@ form.search button {
 }
 
 .resultado {
-    border: 1px solid #fdb900;
+    border: 3px solid var(--light-yellow);
     margin-bottom: 25px;
     text-align: center;
-    box-shadow: 4px 4px 0px 0px #883433;
+    box-shadow: 4px 4px 0px 0px var(--dark-red);
     position: relative;
 }
 
@@ -217,7 +223,7 @@ form.search button {
 }
 
 .resultado .data {
-    background: #fdb900;
+    background: var(--light-yellow);
     padding: 5px 10px;
 }
 
@@ -229,32 +235,47 @@ form.search button {
     padding: 3px 10px;
     font-size: .85rem;
     background: #e9e9e9;
+    font-weight: bold;
+}
+
+
+/* Footer */
+footer {
+    padding: 50px 0;
+    padding-bottom: 0;
+    text-align: center;
+    background: var(--green);
 }
 
 form.contacto {
     max-width: 400px;
+    padding: 0 20px;
 }
 
 form.contacto input, form.contacto textarea {
     margin-bottom: .5rem;
     padding: 5px 15px;
-    border: 1px solid #fdb900;
-    box-shadow: 3px 3px 0px 0px #883433;
+    border: 2px solid var(--light-yellow);
+    box-shadow: 3px 3px 0px 0px var(--dark-red);
 }
 
 form.contacto button {
-    padding: 5px 25px;
-    background: #fdb900;
+    padding: 8px 25px;
+    background: var(--light-yellow);
     border: none;
-    box-shadow: 3px 3px 0px 0px #f38500;
+    box-shadow: 3px 3px 0px 0px var(--orange);
     font-weight: 700;
     text-transform: uppercase;
     font-size: .95rem;
-    color: #883433;
+    color: var(--dark-red);
+}
+
+.contact-info p {
+    font-size: .9rem;
 }
 
 .bottom {
-    border-top: 1px solid gainsboro;
+    background: var(--light-yellow);
     padding: 10px 0;
 }
 
