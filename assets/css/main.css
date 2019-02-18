@@ -71,7 +71,7 @@ h2::after {
 /* Navigation */
 .header-nav {
     background: white;
-    padding: 20px;
+    padding: 15px;
     position: sticky;
     top: 0;
     z-index: 5;
@@ -80,7 +80,7 @@ h2::after {
 }
 
 .logo img {
-    height: 30px;
+    height: 45px;
 }
 
 .navigation li {
@@ -297,7 +297,10 @@ form.contacto button {
     font-size: .8rem;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
+    .header-banner {
+        min-height: 80vh;
+    }
     .mobile-toggle {
         display: none;
     }
@@ -309,11 +312,5 @@ form.contacto button {
     }
     .redes {
         order: 3;
-    }
-}
-
-@media (min-width: 768px) {
-    .header-banner {
-        min-height: 80vh;
     }
 }
