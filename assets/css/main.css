@@ -98,13 +98,25 @@ h2::after {
     font-size: 1.2rem;
 }
 
+.navigation {
+    display: none;
+    justify-content: space-between;
+    order: 4;
+    width: 100%;
+    padding-top: 20px;
+}
+
+
 /* Site Header */
 .header-banner {
     background-image: url('../img/lgo.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px;
-    min-height: 80vh;
+}
+
+.header-banner img {
+    max-width: 100%;
 }
 
 .cta {
@@ -137,18 +149,18 @@ h2::after {
     margin-top: 20px;
 }
 
+
 /* Resultados */
 #resultados {
     padding: 0 0 50px 0;
-    border-bottom: 5px solid var(--light-yellow);
 }
 
 .title {
     background: var(--green);
 	padding: 50px 20px;
     margin-bottom: 70px;
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
     border-top: 5px solid var(--light-yellow);
-    border-bottom: 5px solid var(--light-yellow);
 }
 
 form.search {
@@ -245,6 +257,7 @@ footer {
     padding-bottom: 0;
     text-align: center;
     background: var(--green);
+    box-shadow: 0px -3px 3px 1px rgba(0,0,0,0.3);
 }
 
 form.contacto {
@@ -260,6 +273,7 @@ form.contacto input, form.contacto textarea {
 }
 
 form.contacto button {
+    margin-top: 10px;
     padding: 8px 25px;
     background: var(--light-yellow);
     border: none;
@@ -281,4 +295,25 @@ form.contacto button {
 
 .bottom span {
     font-size: .8rem;
+}
+
+@media (min-width: 576px) {
+    .mobile-toggle {
+        display: none;
+    }
+    .navigation {
+        display: flex;
+        order: 2;
+        width: auto;
+        padding-top: 0;
+    }
+    .redes {
+        order: 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-banner {
+        min-height: 80vh;
+    }
 }

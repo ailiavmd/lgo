@@ -11,6 +11,10 @@ $(document).ready(function(){
         $('html, body').animate({
             scrollTop: $(hash).offset().top - 60
         }, 400);
-    })
+    });
+
+    $('.mobile-toggle').on('click', function(){
+        $('.navigation').toggleClass('d-flex');
+    });
 
 });
